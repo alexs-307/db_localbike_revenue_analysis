@@ -25,5 +25,5 @@ inner join {{ ref("stg__orders" )}} o
     on o.order_id = oi.order_id
 inner join {{ ref("int__products_enriched")}} p 
     on p.product_id = oi.product_id
-inner join {{ ref("stg__stores")} } s 
+inner join {{ ref("stg__stores")}} s 
     on s.store_id = o.store_id
