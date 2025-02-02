@@ -69,6 +69,13 @@ models:
         tests:
           - unique
           - not_null
+      - name: order_status 
+        description: contains status of the orders
+        tests:
+          - accepted_values:
+              name: accepted_values_for_order_status_in_stg__orders
+              values: [ 1, 2, 3, 4]
+              quote: False
       - name: customer_id
         description: foreign key linking to table of customers 
         tests:
