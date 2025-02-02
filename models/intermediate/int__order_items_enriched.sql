@@ -7,6 +7,7 @@ select
     oi.quantity,
     oi.price_dollars,
     oi.discount_pct,
+    oi.has_discount,
     o.customer_id,
     o.staff_id,
     o.store_id,
