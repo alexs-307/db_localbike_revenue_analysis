@@ -6,6 +6,7 @@
 }}
 
 select 
+    order_date,
     store_id,
     staff_id,
     sum(total_order_value_dollars) as total_revenue_dollars,
@@ -14,5 +15,4 @@ select
     avg(total_order_value_dollars) as avg_basket_dollars_per_seller,
     avg(total_item_quantity) as avg_items_per_basket_per_seller
 from {{ ref("int__order_financial_metrics") }}
-group by 
- store_id, staff_id
+group by order_date, store_id, staff_id

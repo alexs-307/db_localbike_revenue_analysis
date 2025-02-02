@@ -4,7 +4,7 @@ select
     order_status,
     order_date,
     required_date,
-    shipped_date,
+    COALESCE(shipped_date,"not_shipped_yet") as shipped_date,
     store_id,
     staff_id 
 from {{ source("databird_final_project",'orders') }}
