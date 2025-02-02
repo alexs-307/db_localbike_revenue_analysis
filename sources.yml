@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: final_project_sources
+    schema: databird_final_project
+    tables:
+      - name: brands 
+      - name: categories 
+      - name: customers 
+      - name: order_items 
+      - name: orders 
+      - name: products 
+      - name: staffs 
+      - name: stocks 
+      - name: stores 
+
+      
+  
