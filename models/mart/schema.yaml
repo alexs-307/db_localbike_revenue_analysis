@@ -8,4 +8,3 @@ models:
             description: date the order was created
             tests:
               - not_null
-            
