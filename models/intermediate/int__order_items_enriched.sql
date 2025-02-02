@@ -18,10 +18,7 @@ select
     o.order_status,
     o.order_date,
     o.required_date,
-    o.shipped_date,
-    CASE WHEN shipped_date <> "not_shipped_yet" THEN 
-        DATE_DIFF(CAST(o.shipped_date AS DATE), CAST(o.order_date AS DATE),DAY) ELSE "NA" END
-    as days_between_order_and_shipping
+    o.shipped_date
 from {{ ref("stg__order_items")}} oi
 inner join {{ ref("stg__orders" )}} o
     on o.order_id = oi.order_id
