@@ -64,6 +64,10 @@ models:
   - name: orders
     description: This table contains information about orders made by customers 
     columns:
+      - name: order_date
+        description: date the order was made 
+        tests:
+          - not_null
       - name: order_id
         description: primary key for orders 
         tests:
