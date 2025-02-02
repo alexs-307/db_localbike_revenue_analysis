@@ -1,0 +1,23 @@
+version: 1
+
+models:
+    - name: mrt_daily_revenues_per_store_seller
+      description: this tables tracks the aggregated sales in dollar value and item quantities daily at the store X seller X category granularity. 
+      columns:
+          - name: order_date
+            description: date the order was created
+            tests:
+              - not_null
+          - name: store_id 
+            description: store_id for which we report the revenues 
+            tests:
+              - not_null
+          - name: staff_id 
+            description: staff member for which we report the revenues 
+            tests:
+              - not null 
+          - name: category_id 
+            description: category for which we report the revenues 
+            tests:
+              - not_null
+              
