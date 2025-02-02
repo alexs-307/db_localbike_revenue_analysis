@@ -4,6 +4,8 @@ select
     oi.product_id,
     p.product_name,
     p.category_id,
+    p.model_year,
+    p.brand_id,
     c.category_name,
     oi.quantity,
     oi.price_dollars,
