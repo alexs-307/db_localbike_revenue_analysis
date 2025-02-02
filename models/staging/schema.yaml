@@ -1,0 +1,138 @@
+version: 1 
+
+models:
+  - name: stg__stores
+    description: This table contains information about stores
+    columns:
+      - name: store_id
+        description: primary key for stores 
+        tests:
+          - unique
+          - not_null
+  - name: stg__stocks
+    description: This table contains information about stocks 
+    columns:
+      - name: stock_id
+        description: primary key for stocks 
+        tests:
+          - unique
+          - not_null
+      - name: product_id 
+        description: foreign key linking to table of products 
+        tests:
+          - relationships:
+              name: foreign_key_product_id_from_stg__stocks_in_stg__products
+              to: ref('stg__products')
+              field: product_id
+      - name: store_id
+        description: foreign key linking to table of stores 
+        tests:
+          - relationships:
+              name: foreign_key_store_id_from_stg__stores_in_stg__stores
+              to: ref('stg__ stores')
+              field: store_id 
+  - name: stg_staffs
+    description: This table contains information about staff members of LocalBike stores
+    columns:
+      - name: staff_id
+        description: primary key for staff members 
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: foreign key linking to table of stores 
+        tests:
+          - relationships:
+              name: foreign_key_store_id_from_stg__staffs_in_stg__stores
+              to: ref('stg__stores')
+              field: store_id
+  - name: stg__products
+    description: This table contains information about products sold by LocalBike 
+    columns:
+      - name: product_id
+        description: primary key for products
+        tests:
+          - unique
+          - not_null
+      - name: brand_id
+        description: foreign key linking to table of brands
+        tests:
+          - relationships:
+              name: foreign_key_brand_id_from_stg__products_in_stg__brands
+              to: ref('stg__brands')
+              field: brand_id
+  - name: orders
+    description: This table contains information about orders made by customers 
+    columns:
+      - name: order_id
+        description: primary key for orders 
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: foreign key linking to table of customers 
+        tests:
+          - relationships:
+              name: foreign_key_customer_id_from_stg__customers_in_stg__customers
+              to: ref('stg__customers')
+              field: customer_id
+      - name: store_id 
+        description: foreign_key linking to table of stores
+        tests:
+          - relationships:
+              name: foreign_key_store_id_from_stg__order_items_in_stg__stores
+              to: ref('stg__stores')
+              field: store_id
+      - name: staff_id
+        description: foreign_key linking to table of staff members 
+        tests:
+          - relationships:
+              name: foreign_key_order_id_from_stg__orders_in_stg__staffs
+              to: ref('stg__staffs')
+              field: staff_id
+  - name: stg__order_items
+    description: This table contains information about products purchased in every order
+    columns:
+      - name: order_item_id 
+        description: primary key for order_items table 
+        tests:
+          - unique
+          - not_null
+      - name: order_id 
+        description: foreign key linking to table of orders 
+        tests:
+          - relationships:
+              name: foreign_key_order_id_from_stg__order_items_in_stg__orders
+              to: ref('stg__orders')
+              field: order_id
+      - name: product_id 
+        description: foreign key linking to table of products 
+        tests:
+          - relationships:
+              name: foreign_key_product_id_from_stg__order_items_in_stg__products
+              to: ref('stg__products')
+              field: product_id
+  - name: stg__customers 
+    description: This table contains information about customers 
+    columns:
+      - name: customer_id 
+        description: primary key for customers 
+        tests:
+          - unique
+          - not_null
+  - name: stg__categories
+    description: This table contains information about categories
+    columns:
+      - name: category_id
+        description: primary key for categories 
+        tests: 
+          - unique
+          - not_null
+  - name: stg__brands 
+    description: This table contains information about brands
+    columns:
+      - name: brand_id
+        description: primary key for the brand
+        tests:
+          - unique 
+          - not_null 

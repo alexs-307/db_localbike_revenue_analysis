@@ -1,4 +1,5 @@
 select 
+    CONCAT(order_id,'_',product_id) as order_item_id,
     order_id,
     item_id,
     product_id,
