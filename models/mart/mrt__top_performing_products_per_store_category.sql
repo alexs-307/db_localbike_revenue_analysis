@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized = 'table'
+    )
+}}
+
 WITH product_purchases_per_store_category AS (
     SELECT 
         store_id,
