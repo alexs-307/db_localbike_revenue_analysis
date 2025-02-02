@@ -6,7 +6,8 @@ select
     p.category_id,
     p.model_year,
     p.brand_id,
-    c.category_name,
+    p.brand_name,
+    p.category_name,
     oi.quantity,
     oi.price_dollars,
     oi.discount_pct,
@@ -22,7 +23,5 @@ select
 from {{ ref("stg__order_items")}} oi
 inner join {{ ref("stg__orders" )}} o
     on o.order_id = oi.order_id
-inner join {{ ref("stg__products")}} p 
+inner join {{ ref("int__products_enriched")}} p 
     on p.product_id = oi.product_id
-inner join {{ ref("stg__categories")}} c 
-    on c.category_id = p.category_id
