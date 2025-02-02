@@ -1,4 +1,4 @@
-{% docs mrt_daily_revenues_per_store_seller %}
+{% docs mrt__daily_revenues_per_store_category %}
 
 This model computes an aggregated view of all historical sales per store X category
 including:

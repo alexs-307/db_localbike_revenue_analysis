@@ -1,4 +1,4 @@
-{% docs mrt_daily_revenues_per_store_seller %}
+{% docs mrt__daily_revenues_per_store_seller %}
 
 This model computes a daily view of sales and revenues at the store X seller granularity 
 including:

@@ -1,7 +1,7 @@
 version: 1
 
 models:
-    - name: mrt_daily_revenues_per_store_seller
+    - name: mrt__daily_revenues_per_store_seller
       description: '{{ doc("mrt__daily_revenues_per_store_seller") }}'
       columns:
           - name: order_date
