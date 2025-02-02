@@ -61,7 +61,7 @@ models:
               name: foreign_key_brand_id_from_stg__products_in_stg__brands
               to: ref('stg__brands')
               field: brand_id
-  - name: orders
+  - name: stg__orders
     description: This table contains information about orders made by customers 
     columns:
       - name: order_date
