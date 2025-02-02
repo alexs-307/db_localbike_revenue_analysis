@@ -18,3 +18,4 @@ WITH product_purchases_per_store_category AS (
 )
 
 select * from product_purchases_per_store_category
+ORDER BY store_id, category_name, total_items_sold desc
