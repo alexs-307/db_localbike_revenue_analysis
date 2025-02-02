@@ -1,11 +1,11 @@
 select 
     order_date as dt,
     store_id,
+    staff_id,
     sum(total_order_value_dollars) as total_revenue_dollars,
     sum(total_order_value_wo_discounts_dollars) as total_revenue_pre_discount_dollars,
     count(distinct order_id) as cnt_orders,
-    avg(total_order_value_dollars) as avg_basket_dollars,
-    avg(total_item_quantity) as avg_items_per_basket,
-    count(distinct seller_id) as cnt_sellers_with_sale
+    avg(total_order_value_dollars) as avg_basket_dollars_per_seller,
+    avg(total_item_quantity) as avg_items_per_basket_per_seller
 from {{ ref("int__order_financial_metrics") }}
-group by dt, store_id
+group by dt, store_id, staff_id
