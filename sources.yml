@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: final_project_sources
+  - name: databird_final_project
     schema: databird_final_project
     tables:
       - name: brands 
