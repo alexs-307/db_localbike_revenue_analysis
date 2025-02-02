@@ -1,3 +1,10 @@
+{{
+    config(
+        alias = 'daily_revenues_per_store',
+        materialized = 'table'
+    )
+}}
+
 select 
     order_date as dt,
     store_id,
