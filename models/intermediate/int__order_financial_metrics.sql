@@ -1,5 +1,7 @@
 select 
     order_id,
+    staff_id,
+    store_id,
     COUNT(DISTINCT product_id) as cnt_distinct_products,
     COUNT(product_id) as cnt_products,
     COUNT(category_id) as cnt_categories,

@@ -16,7 +16,7 @@ select
     o.order_date,
     o.required_date,
     o.shipped_date,
-    DATE_DIFF(o.shipped_date, o.order_date,'day') as days_between_order_and_shipping
+    DATE_DIFF(o.shipped_date, o.order_date,DAY) as days_between_order_and_shipping
 from {{ ref("stg__order_items")}} oi
 inner join {{ ref("stg__orders" )}} o
     on o.order_id = oi.order_id
