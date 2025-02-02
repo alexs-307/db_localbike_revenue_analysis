@@ -2,6 +2,8 @@ select
     oi.order_item_id,
     oi.order_id,
     oi.product_id,
+    p.product_name,
+    p.category_id,
     oi.quantity,
     oi.price_dollars,
     oi.discount_pct,
@@ -15,3 +17,5 @@ select
 from {{ ref("stg__order_items")}} oi
 inner join {{ ref("stg__orders" )}} o
     on o.order_id = oi.order_id
+inner join {{ ref("stg__products")}} p 
+    on p.product_id = oi.product_id
