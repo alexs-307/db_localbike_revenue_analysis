@@ -12,4 +12,11 @@ models:
             description: store_id for which we report the revenues 
             tests:
               - not_null
+          - name: ratio_seller_per_manager
+            description: total count of staff members responsible for sales divided by the count of managers associated with that store 
+            tests:
+              - not_null
+          - name: revenue_dollars_per_seller
+            description: revenue per store X category normalized by the total count of staff members responsible for sales 
+              
               

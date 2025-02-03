@@ -6,6 +6,8 @@ including:
 - **Total revenue pre-discount in dollars**
 - **Count of orders made** 
 - **Total quantity of items sold**
+- **Ratio of managers per seller** 
+- **Total revenue per seller**
 
 This allows us to identify if some stores specialized in selling certain categories and/or if assortment optimization could help boost sales from low-performing stores
 {% enddocs %}
