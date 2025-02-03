@@ -1,6 +1,6 @@
 {{
     config(
-        alias = 'mrt__daily_revenues_per_store_category',
+        alias = 'mrt__revenues_per_store_category',
         materialized = 'table'
     )
 }}
